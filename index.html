@@ -296,6 +296,40 @@
             </button>
     </form>
 </div>
-<!-- 스크립트 -->
+<script>
+    function calculateGritScore() {
+        var totalScore = 0;
+        for (var i = 1; i <= 10; i++) {
+            var radios = document.getElementsByName('question' + i);
+            for (var j = 0; j < radios.length; j++) {
+                if (radios[j].checked) {
+                    totalScore += parseInt(radios[j].value);
+                    break;
+                }
+            }
+        }
+        return totalScore;
+    }
+
+    document.getElementById('grit-test-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var gritScore = calculateGritScore();
+        gritScore = gritScore / 10;
+        var percentile = '';
+        if (gritScore <= 2.5) percentile = '10%';
+        else if (gritScore <= 3.0) percentile = '20%';
+        else if (gritScore <= 3.3) percentile = '30%';
+        else if (gritScore <= 3.5) percentile = '40%';
+        else if (gritScore <= 3.8) percentile = '50%';
+        else if (gritScore <= 3.9) percentile = '60%';
+        else if (gritScore <= 4.1) percentile = '70%';
+        else if (gritScore <= 4.3) percentile = '80%';
+        else if (gritScore <= 4.5) percentile = '90%';
+        else if (gritScore <= 4.7) percentile = '95%';
+        else if (gritScore <= 4.9) percentile = '99%';
+        else percentile = '100%';
+        alert('당신의 그릿스코어는 ' + gritScore + '점이며, 이는 상위 ' + percentile + '에 해당합니다.');
+    });
+</script>
 </body>
 </html>
