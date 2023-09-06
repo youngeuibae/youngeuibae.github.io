@@ -3,36 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="qoRotECDD2K9SUC4vqKobi8WJlKmhkV1WsNmd0OEYms" />
+
     <title>그릿 테스트</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* 중앙에서 상단으로 변경 */
-            height: auto; /* 100vh에서 auto로 변경 */
+            font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
             margin: 0;
-            background-color: #f8f8f8;
-            font-family: 'Roboto', sans-serif;
+            padding: 0;
         }
-        form {
-            width: 80%;
-            max-width: 800px;
-            margin: auto; /* form 요소를 중앙에 위치시킴 */
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        h2 {
-            text-align: left;
+        h1, h2 {
+            color: #1d1d1f;
+        }
+        .form-radio {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #0070c9;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #005999;
         }
     </style>
-    <meta name="google-site-verification" content="qoRotECDD2K9SUC4vqKobi8WJlKmhkV1WsNmd0OEYms" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9360638495551473"
-     crossorigin="anonymous"></script>
 </head>
-<body class="bg-gray-100 font-sans flex items-center justify-center min-h-screen">
-    <div class="container mx-auto my-10 px-4 md:px-0">
-        <h1 class="text-4xl font-bold mb-10 text-center text-blue-700">그릿 테스트</h1>
-        <form id="grit-test-form" class="space-y-8 bg-white shadow-xl rounded-xl px-8 pt-6 pb-8 mb-4 mx-2 md:mx-0 max-w-3xl mx-auto">
+<body>
+    <div class="container">
+        <h1 class="text-center">그릿 테스트</h1>
+        <form id="grit-test-form">
             <!-- 질문 1 -->
             <div class="mb-4">
                 <h2 class="mb-2 text-center">1. 새로운 프로젝트를 시작할 때, 나는 그것을 끝까지 완료하는 경향이 있다.</h2>
@@ -64,7 +80,6 @@
                 <h2 class="mb-2 text-center">2. 나는 종종 목표를 바꾸지 않는다.</h2>
                 <div class="space-y-2">
                     <label class="inline-flex items-center">
-                        
                         <input type="radio" name="question2" value="1" class="form-radio">
                         <span class="ml-2">전혀 그렇지 않다 - 1점</span>
                     </label>
@@ -164,9 +179,9 @@
                     </label>
                 </div>
             </div>
-            <!-- 질문 6 -->
+                       <!-- 질문 6 -->
             <div class="mb-4">
-                <h2 class="mb-2 text-center">6. 새로운 프로젝트를 시작할 때, 나는 그것을 끝까지 완료하는 경향이 있다.</h2>
+                <h2 class="mb-2 text-center">6. 나는 종종 목표를 바꾸지 않는다.</h2>
                 <div class="space-y-2">
                     <label class="inline-flex items-center">
                         <input type="radio" name="question6" value="1" class="form-radio">
@@ -192,7 +207,7 @@
             </div>
             <!-- 질문 7 -->
             <div class="mb-4">
-                <h2 class="mb-2 text-center">7. 나는 종종 목표를 바꾸지 않는다.</h2>
+                <h2 class="mb-2 text-center">7. 어려움에 직면했을 때, 나는 쉽게 포기하지 않는다.</h2>
                 <div class="space-y-2">
                     <label class="inline-flex items-center">
                         <input type="radio" name="question7" value="1" class="form-radio">
@@ -218,7 +233,7 @@
             </div>
             <!-- 질문 8 -->
             <div class="mb-4">
-                <h2 class="mb-2 text-center">8. 어려움에 직면했을 때, 나는 쉽게 포기하지 않는다.</h2>
+                <h2 class="mb-2 text-center">8. 새로운 프로젝트를 시작할 때, 나는 그것을 끝까지 완료하는 경향이 있다.</h2>
                 <div class="space-y-2">
                     <label class="inline-flex items-center">
                         <input type="radio" name="question8" value="1" class="form-radio">
@@ -244,7 +259,7 @@
             </div>
             <!-- 질문 9 -->
             <div class="mb-4">
-                <h2 class="mb-2 text-center">9. 새로운 프로젝트를 시작할 때, 나는 그것을 끝까지 완료하는 경향이 있다.</h2>
+                <h2 class="mb-2 text-center">9. 나는 종종 목표를 바꾸지 않는다.</h2>
                 <div class="space-y-2">
                     <label class="inline-flex items-center">
                         <input type="radio" name="question9" value="1" class="form-radio">
@@ -270,7 +285,7 @@
             </div>
             <!-- 질문 10 -->
             <div class="mb-4">
-                <h2 class="mb-2 text-center">10. 나는 종종 목표를 바꾸지 않는다.</h2>
+                <h2 class="mb-2 text-center">10. 어려움에 직면했을 때, 나는 쉽게 포기하지 않는다.</h2>
                 <div class="space-y-2">
                     <label class="inline-flex items-center">
                         <input type="radio" name="question10" value="1" class="form-radio">
@@ -294,45 +309,45 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="w-1/2 py-2 mt-6 font-medium tracking-widest text-white uppercase bg-green-500 shadow-lg focus:outline-none hover:bg-green-900 hover:shadow-none">
-            검사하기
-            </button>
-    </form>
-</div>
-<script>
-    function calculateGritScore() {
-        var totalScore = 0;
-        for (var i = 1; i <= 10; i++) {
-            var radios = document.getElementsByName('question' + i);
-            for (var j = 0; j < radios.length; j++) {
-                if (radios[j].checked) {
-                    totalScore += parseInt(radios[j].value);
-                    break;
+            <button type="submit" class="w-1/2 py-2 mt-6 font-medium tracking-widest text-white uppercase bg-green-500 shadow-lg focus:outline-none hover:bg-green-900 hover:shadow-none"></button>
+        </form>
+    </div>
+    <script>
+        function calculateGritScore() {
+            var totalScore = 0;
+            for (var i = 1; i <= 10; i++) {
+                var radios = document.getElementsByName('question' + i);
+                for (var j = 0; j < radios.length; j++) {
+                    if (radios[j].checked) {
+                        totalScore += parseInt(radios[j].value);
+                        break;
+                    }
                 }
             }
+            return totalScore;
         }
-        return totalScore;
-    }
 
-    document.getElementById('grit-test-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        var gritScore = calculateGritScore();
-        gritScore = gritScore / 10;
-        var percentile = '';
-        if (gritScore <= 2.5) percentile = '10%';
-        else if (gritScore <= 3.0) percentile = '20%';
-        else if (gritScore <= 3.3) percentile = '30%';
-        else if (gritScore <= 3.5) percentile = '40%';
-        else if (gritScore <= 3.8) percentile = '50%';
-        else if (gritScore <= 3.9) percentile = '60%';
-        else if (gritScore <= 4.1) percentile = '70%';
-        else if (gritScore <= 4.3) percentile = '80%';
-        else if (gritScore <= 4.5) percentile = '90%';
-        else if (gritScore <= 4.7) percentile = '95%';
-        else if (gritScore <= 4.9) percentile = '99%';
-        else percentile = '100%';
-        alert('당신의 그릿스코어는 ' + gritScore + '점이며, 이는 상위 ' + percentile + '에 해당합니다.');
-    });
-</script>
+        document.getElementById('grit-test-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var gritScore = calculateGritScore();
+            gritScore = gritScore / 10;
+            var percentile = '';
+            if (gritScore <= 2.5) percentile = '10%';
+            else if (gritScore <= 3.0) percentile = '20%';
+            else if (gritScore <= 3.3) percentile = '30%';
+            else if (gritScore <= 3.5) percentile = '40%';
+            else if (gritScore <= 3.8) percentile = '50%';
+            else if (gritScore <= 3.9) percentile = '60%';
+            else if (gritScore <= 4.1) percentile = '70%';
+            else if (gritScore <= 4.3) percentile = '80%';
+            else if (gritScore <= 4.5) percentile = '90%';
+            else if (gritScore <= 4.7) percentile = '95%';
+            else if (gritScore <= 4.9) percentile = '99%';
+            else percentile = '100%';
+            var resultDiv = document.createElement('div');
+            resultDiv.innerHTML = '당신의 그릿스코어는 ' + gritScore + '점이며, 이는 상위 ' + percentile + '에 해당합니다.';
+            document.body.appendChild(resultDiv);
+        });
+    </script>
 </body>
 </html>
