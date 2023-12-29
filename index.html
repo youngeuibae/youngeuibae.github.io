@@ -1,356 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="qoRotECDD2K9SUC4vqKobi8WJlKmhkV1WsNmd0OEYms" />
-
-    <title>그릿 테스트</title>
     <style>
+        /* 간단한 CSS 스타일 */
         body {
-            font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-            background-color: #f5f5f7;
-            color: #1d1d1f;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 980px;
-            margin: 0 auto;
+            font-family: Arial, sans-serif;
             padding: 20px;
         }
-        h1, h2 {
-            color: #1d1d1f;
+        .question {
+            margin-bottom: 20px;
         }
-        .form-radio {
-            margin-right: 10px;
+        h1 {
+            font-size: 2em;
+            text-align: center;
         }
         button {
             display: block;
             width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            background-color: #0070c9;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #005999;
+            padding: 10px;
+            font-size: 1em;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center">그릿 테스트</h1>
-        <form id="grit-test-form">
-            <!-- 질문 1 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">1. 새로운 프로젝트를 시작할 때, 나는 그것을 끝까지 완료하는 경향이 있다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question1" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question1" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question1" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question1" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question1" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <!-- 질문 2 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">2. 나는 종종 목표를 바꾸지 않는다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question2" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question2" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question2" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question2" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question2" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <!-- 질문 3 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">3. 어려움에 직면했을 때, 나는 쉽게 포기하지 않는다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question3" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question3" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question3" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question3" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question3" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <!-- 질문 4 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">4. 나는 종종 목표를 바꾸지 않는다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question4" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question4" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question4" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question4" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question4" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <!-- 질문 5 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">5. 어려움에 직면했을 때, 나는 쉽게 포기하지 않는다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question5" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question5" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question5" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question5" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question5" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-                       <!-- 질문 6 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">6. 나는 종종 목표를 바꾸지 않는다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question6" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question6" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question6" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question6" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question6" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <!-- 질문 7 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">7. 어려움에 직면했을 때, 나는 쉽게 포기하지 않는다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question7" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question7" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question7" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question7" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question7" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <!-- 질문 8 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">8. 새로운 프로젝트를 시작할 때, 나는 그것을 끝까지 완료하는 경향이 있다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question8" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question8" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question8" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question8" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question8" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <!-- 질문 9 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">9. 나는 종종 목표를 바꾸지 않는다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question9" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question9" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question9" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question9" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question9" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <!-- 질문 10 -->
-            <div class="mb-4">
-                <h2 class="mb-2 text-center">10. 어려움에 직면했을 때, 나는 쉽게 포기하지 않는다.</h2>
-                <div class="space-y-2">
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question10" value="1" class="form-radio">
-                        <span class="ml-2">전혀 그렇지 않다 - 1점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question10" value="2" class="form-radio">
-                        <span class="ml-2">그렇지 않다 - 2점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question10" value="3" class="form-radio">
-                        <span class="ml-2">보통이다 - 3점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question10" value="4" class="form-radio">
-                        <span class="ml-2">그렇다 - 4점</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="radio" name="question10" value="5" class="form-radio">
-                        <span class="ml-2">매우 그렇다 - 5점</span>
-                    </label>
-                </div>
-            </div>
-            <button type="submit" class="w-1/2 py-2 mt-6 font-medium tracking-widest text-white uppercase bg-green-500 shadow-lg focus:outline-none hover:bg-green-900 hover:shadow-none">
-                검사하기
-            </button>
-            
-        </form>
-    </div>
+    <h1>Grit Test</h1>
+    <form id="grit-test-form">
+        <!-- 질문들이 여기에 동적으로 생성됩니다. -->
+    </form>
+    <button onclick="calculateGritScore()">Submit</button>
+    <div id="grit-score"></div>
+    <p>Your Grit Score indicates your level of perseverance and passion for long-term goals. A higher score suggests a greater level of grit.</p>
     <script>
+        var questions = [
+            'New ideas and projects sometimes distract me from previous ones.',
+            'Setbacks don’t discourage me. I don’t give up easily.',
+            'I often set a goal but later choose to pursue a different one.',
+            'I am a hard worker.',
+            'I have difficulty maintaining my focus on projects that take more than a few months to complete.',
+            'I finish whatever I begin.',
+            'My interests change from year to year.',
+            'I am diligent. I never give up.',
+            'I have been obsessed with a certain idea or project for a short time but later lost interest.',
+            'I have overcome setbacks to conquer an important challenge.'
+        ];
+
+        var form = document.getElementById('grit-test-form');
+
+        questions.forEach(function(question, index) {
+            var div = document.createElement('div');
+            div.className = 'question';
+            div.innerHTML = `
+                <h2>Question ${index + 1}</h2>
+                <p>${question}</p>
+                <input type="range" min="1" max="5" value="3" name="question${index + 1}">
+                <p>1 - Strongly disagree, 5 - Strongly agree</p>
+            `;
+            form.appendChild(div);
+        });
+
         function calculateGritScore() {
             var totalScore = 0;
-            for (var i = 1; i <= 10; i++) {
-                var radios = document.getElementsByName('question' + i);
-                for (var j = 0; j < radios.length; j++) {
-                    if (radios[j].checked) {
-                        totalScore += parseInt(radios[j].value);
-                        break;
-                    }
+            for (var i = 0; i < questions.length; i++) {
+                var scoreElement = document.querySelector(`input[name="question${i + 1                }"]`);
+                if (!scoreElement) {
+                    alert('모든 질문에 답변해주세요.');
+                    return;
                 }
+                var score = scoreElement.value;
+                if (isNaN(score)) {
+                    alert('점수는 숫자여야 합니다.');
+                    return;
+                }
+                totalScore += parseInt(score);
             }
-            return totalScore;
+            var gritScore = totalScore / questions.length;
+            document.getElementById('grit-score').innerText = 'Your Grit Score: ' + gritScore;
         }
-
-        document.getElementById('grit-test-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var gritScore = calculateGritScore();
-            gritScore = gritScore / 10;
-            var percentile = '';
-            if (gritScore <= 2.5) percentile = '10%';
-            else if (gritScore <= 3.0) percentile = '20%';
-            else if (gritScore <= 3.3) percentile = '30%';
-            else if (gritScore <= 3.5) percentile = '40%';
-            else if (gritScore <= 3.8) percentile = '50%';
-            else if (gritScore <= 3.9) percentile = '60%';
-            else if (gritScore <= 4.1) percentile = '70%';
-            else if (gritScore <= 4.3) percentile = '80%';
-            else if (gritScore <= 4.5) percentile = '90%';
-            else if (gritScore <= 4.7) percentile = '95%';
-            else if (gritScore <= 4.9) percentile = '99%';
-            else percentile = '100%';
-            var resultDiv = document.createElement('div');
-            resultDiv.innerHTML = '당신의 그릿스코어는 ' + gritScore + '점이며, 이는 상위 ' + percentile + '에 해당합니다.';
-            document.body.appendChild(resultDiv);
-        });
     </script>
 </body>
 </html>
