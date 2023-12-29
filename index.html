@@ -5,21 +5,9 @@
         /* 간단한 CSS 스타일 */
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
         }
         .question {
             margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 2em;
-            text-align: center;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 1em;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -30,7 +18,6 @@
     </form>
     <button onclick="calculateGritScore()">Submit</button>
     <div id="grit-score"></div>
-    <p>Your Grit Score indicates your level of perseverance and passion for long-term goals. A higher score suggests a greater level of grit.</p>
     <script>
         var questions = [
             'New ideas and projects sometimes distract me from previous ones.',
@@ -54,7 +41,6 @@
                 <h2>Question ${index + 1}</h2>
                 <p>${question}</p>
                 <input type="range" min="1" max="5" value="3" name="question${index + 1}">
-                <p>1 - Strongly disagree, 5 - Strongly agree</p>
             `;
             form.appendChild(div);
         });
@@ -64,18 +50,41 @@
             for (var i = 0; i < questions.length; i++) {
                 var scoreElement = document.querySelector(`input[name="question${i + 1}"]`);
                 if (!scoreElement) {
-                    alert('모든 질문에 답변해주세요.');
+                    alert('Please answer all questions.');
                     return;
                 }
                 var score = scoreElement.value;
                 if (isNaN(score)) {
-                    alert('점수는 숫자여야 합니다.');
+                    alert('Score must be a number.');
                     return;
                 }
                 totalScore += parseInt(score);
             }
             var gritScore = totalScore / questions.length;
-            document.getElementById('grit-score').innerText = 'Your Grit Score: ' + gritScore;
+            var percentile = getPercentile(gritScore);
+            document.getElementById('grit-score').innerText = 'Your Grit Score: ' + gritScore + '. You are in the top ' + percentile + '%.';
+        }
+
+        function getPercentile(gritScore) {
+            var percentiles = [
+                {score: 2.5, percentile: 10},
+                {score: 3.0, percentile: 20},
+                {score: 3.3, percentile: 30},
+                {score: 3.5, percentile: 40},
+                {score: 3.8, percentile: 50},
+                {score: 3.9, percentile: 60},
+                {score: 4.1, percentile: 70},
+                {score: 4.3, percentile: 80},
+                {score: 4.5, percentile: 90},
+                {score: 4.7, percentile: 95},
+                {score: 4.9, percentile: 99}
+            ];
+            for (var i = percentiles.length - 1; i >= 0; i--) {
+                if (gritScore >= percentiles[i].score) {
+                    return percentiles[i].percentile;
+                }
+            }
+            return 0;
         }
     </script>
 </body>
