@@ -62,7 +62,7 @@
         function calculateGritScore() {
             var totalScore = 0;
             for (var i = 0; i < questions.length; i++) {
-                var scoreElement = document.querySelector(`input[name="question${i + 1                }"]`);
+                var scoreElement = document.querySelector(`input[name="question${i + 1}"]`);
                 if (!scoreElement) {
                     alert('모든 질문에 답변해주세요.');
                     return;
