@@ -31,10 +31,6 @@
             cursor: pointer;
             border-radius: 4px;
         }
-        #grit-score {
-            font-size: 20px;
-            color: #333;
-        }
     </style>
 </head>
 <body>
@@ -43,7 +39,6 @@
         <!-- 질문들이 여기에 동적으로 생성됩니다. -->
     </form>
     <button onclick="calculateGritScore()">Submit</button>
-    <div id="grit-score"></div>
     <script>
         var questions = [
             'New ideas and projects sometimes distract me from previous ones.',
@@ -88,7 +83,7 @@
             }
             var gritScore = totalScore / questions.length;
             var percentile = getPercentile(gritScore);
-            document.getElementById('grit-score').innerText = 'Your Grit Score: ' + gritScore + '. You are in the top ' + percentile + '%.';
+            alert('Wow! Your Grit Score is ' + gritScore + '. That puts you in the top ' + percentile + '%. Keep up the good work!');
         }
 
         function getPercentile(gritScore) {
