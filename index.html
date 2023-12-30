@@ -141,7 +141,7 @@
             var div = document.createElement('div');
             div.className = 'question';
             var isEven = (index + 1) % 2 === 0;
-            var labels = isEven ? ['5', '4', '3', '2', '1'] : ['1', '2', '3', '4', '5'];
+            var labels = isEven ? ['1', '2', '3', '4', '5'] : ['5', '4', '3', '2', '1'];
             div.innerHTML = `
             <h2>질문 ${index + 1}</h2>
                 <p>${question}</p>
@@ -149,21 +149,23 @@
                     <div class="slider-labels">
                         ${labels.map(label => `<span>${label}</span>`).join('')}
                     </div>
-                    <input type="range" min="1" max="5" value="${isEven ? '5' : '1'}" id="question${index + 1}" oninput="updateScore(${index + 1}, this.value)">
+                    <input type="range" min="1" max="5" value="${isEven ? '1' : '5'}" id="question${index + 1}" oninput="updateScore(${index + 1}, this.value)">
                     <div class="end-labels">
                         <span>전혀 그렇지 않다</span>
                         <span>매우 그렇다</span>
                     </div>
                 </div>
-                <span id="score${index + 1}" class="score-display">${isEven ? '5' : '1'}</span>
+                <span id="score${index + 1}" class="score-display">${isEven ? '1' : '5'}</span>
             `;
             form.appendChild(div);
         });
 
         function updateScore(questionNumber, value) {
             // 질문 번호에 따라 점수 척도를 반전시킵니다.
-            var score = questionNumber % 2 === 0 ? value : 6 - value;
-            document.getElementById(`score${questionNumber}`).textContent = score;
+            var score = questionNumber % 2 === 0 ? 6 - value : value;
+            // 점수를 해당하는 score-display 요소에 표시합니다.
+            var scoreDisplay = document.getElementById('score' + questionNumber);
+            scoreDisplay.textContent = score;
         }
 
         function calculateGritScore() {
