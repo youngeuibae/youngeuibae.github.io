@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta name="google-adsense-account" content="ca-pub-9360638495551473">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="그릿 테스트를 통해 당신의 인내력을 확인해보세요.">
+    <meta name="keywords" content="그릿 테스트, 인내력 테스트, 그릿 점수">
+    <meta name="author" content="Your Name">
+    <title>그릿 테스트</title>
     <style>
         /* 간단한 CSS 스타일 */
         body {
@@ -55,11 +59,12 @@
     </style>
 </head>
 <body>
-    <h1>Grit Test</h1>
+    <h1>그릿 테스트</h1>
     <form id="grit-test-form">
         <!-- 질문들이 여기에 동적으로 생성됩니다. -->
     </form>
-    <button onclick="calculateGritScore()">Submit</button>
+    <button onclick="calculateGritScore()">제출</button>
+    <button onclick="shareResults()">결과 공유하기</button>
     <!-- 커스텀 모달 -->
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -69,16 +74,16 @@
     </div>
     <script>
         var questions = [
-            'New ideas and projects sometimes distract me from previous ones.',
-            'Setbacks don’t discourage me. I don’t give up easily.',
-            'I often set a goal but later choose to pursue a different one.',
-            'I am a hard worker.',
-            'I have difficulty maintaining my focus on projects that take more than a few months to complete.',
-            'I finish whatever I begin.',
-            'My interests change from year to year.',
-            'I am diligent. I never give up.',
-            'I have been obsessed with a certain idea or project for a short time but later lost interest.',
-            'I have overcome setbacks to conquer an important challenge.'
+            '새로운 아이디어와 프로젝트가 때때로 이전의 것들로부터 나를 방해합니다.',
+            '난 좌절하지 않습니다. 쉽게 포기하지 않습니다.',
+            '나는 종종 목표를 설정하지만 나중에 다른 것을 추구하기로 선택합니다.',
+            '나는 열심히 일하는 사람입니다.',
+            '몇 달 이상 걸리는 프로젝트에 집중하는 데 어려움을 겪습니다.',
+            '나는 시작한 것을 끝까지 해냅니다.',
+            '나의 관심사는 매년 바뀝니다.',
+            '나는 꾸준합니다. 절대로 포기하지 않습니다.',
+            '나는 짧은 시간 동안 특정 아이디어나 프로젝트에 집착했지만 나중에 관심을 잃었습니다.',
+            '나는 중요한 도전을 정복하기 위해 좌절을 극복했습니다.'
         ];
 
         var form = document.getElementById('grit-test-form');
@@ -87,7 +92,7 @@
             var div = document.createElement('div');
             div.className = 'question';
             div.innerHTML = `
-                <h2>Question ${index + 1}</h2>
+            <h2>질문 ${index + 1}</h2>
                 <p>${question}</p>
                 <input type="range" min="1" max="5" value="3" name="question${index + 1}">
             `;
@@ -99,19 +104,20 @@
             for (var i = 0; i < questions.length; i++) {
                 var scoreElement = document.querySelector(`input[name="question${i + 1}"]`);
                 if (!scoreElement) {
-                    alert('Please answer all questions.');
+                    alert('모든 질문에 답해주세요.');
                     return;
                 }
                 var score = scoreElement.value;
                 if (isNaN(score)) {
-                    alert('Score must be a number.');
+                    alert('점수는 숫자여야 합니다.');
                     return;
                 }
                 totalScore += parseInt(score);
             }
             var gritScore = totalScore / questions.length;
             var percentile = getPercentile(gritScore);
-            showModal('Wow! Your Grit Score is ' + gritScore + '. That puts you in the top ' + percentile + '%. Keep up the good work!');
+            showModal('와우! 당신의 그릿 점수는 ' + gritScore + '입니다. 이는 상위 ' + percentile + '%에 해당합니다. 계속해서 좋은 작업을 유지하세요!');
+            return {gritScore: gritScore, percentile: percentile};
         }
 
         function getPercentile(gritScore) {
@@ -149,6 +155,23 @@
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
+            }
+        }
+
+        // 결과를 공유하는 함수
+        function shareResults() {
+            var results = calculateGritScore();
+            var url = window.location.href + '?gritScore=' + results.gritScore + '&percentile=' + results.percentile;
+            window.open(url, '_blank');
+        }
+
+        // 페이지 로드 시 URL의 쿼리 파라미터를 해석하는 함수
+        window.onload = function() {
+            var params = new URLSearchParams(window.location.search);
+            var gritScore = params.get('gritScore');
+            var percentile = params.get('percentile');
+            if (gritScore && percentile) {
+                showModal('당신의 그릿 점수는 ' + gritScore + '입니다. 이는 상위 ' + percentile + '%에 해당합니다.');
             }
         }
     </script>
