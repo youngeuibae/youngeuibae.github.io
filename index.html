@@ -149,18 +149,19 @@
             var modal = document.getElementById("myModal");
             var span = document.getElementById("close");
             var shareButton = document.getElementById("share-button");
-            document.getElementById("modal-text").innerText = text;
+            var modalText = document.getElementById("modal-text");
+            modalText.innerHTML = text; // innerHTML을 사용하여 HTML을 삽입합니다.
             modal.style.display = "block";
             shareButton.style.display = showShareButton ? "block" : "none";
             span.onclick = function() {
                 modal.style.display = "none";
-            }
+            };
             window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
-            }
-        }
+            };
+        };
 
         function copyToClipboard() {
             var dummy = document.createElement('input');
@@ -180,7 +181,9 @@
             var gritScore = params.get('gritScore');
             var percentile = params.get('percentile');
             if (gritScore && percentile) {
-                showModal('당신의 그릿 점수는 ' + gritScore + '입니다. 이는 상위 ' + percentile + '%에 해당합니다. <button onclick="location.href=\'' + window.location.origin + '\'">나도 검사하기</button>', false);
+                var resultText = '당신의 그릿 점수는 ' + gritScore + '입니다. 이는 상위 ' + percentile + '%에 해당합니다.';
+                var buttonText = '<button onclick="location.href=\'' + window.location.origin + '\'">나도 검사하기</button>';
+                showModal(resultText + buttonText, false);
             }
         }
     </script>
