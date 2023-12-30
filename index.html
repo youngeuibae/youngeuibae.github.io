@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="그릿 테스트를 통해 당신의 인내력을 확인해보세요.">
     <meta name="keywords" content="그릿 테스트, 인내력 테스트, 그릿 점수">
-    <meta name="author" content="Your Name">
+    <meta name="author" content="Youngeui Bae">
+    <meta property="og:title" content="그릿 테스트 결과" />
+    <meta property="og:description" content="그릿 점수를 확인해보세요!" />
+    <meta property="og:url" content="https://youngeuibae.github.io/grit-test" />
     <title>그릿 테스트</title>
     <style>
         /* 간단한 CSS 스타일 */
@@ -74,16 +77,16 @@
     </div>
     <script>
         var questions = [
-            '새로운 아이디어와 프로젝트가 때때로 이전의 것들로부터 나를 방해합니다.',
-            '난 좌절하지 않습니다. 쉽게 포기하지 않습니다.',
-            '나는 종종 목표를 설정하지만 나중에 다른 것을 추구하기로 선택합니다.',
-            '나는 열심히 일하는 사람입니다.',
-            '몇 달 이상 걸리는 프로젝트에 집중하는 데 어려움을 겪습니다.',
-            '나는 시작한 것을 끝까지 해냅니다.',
-            '나의 관심사는 매년 바뀝니다.',
-            '나는 꾸준합니다. 절대로 포기하지 않습니다.',
-            '나는 짧은 시간 동안 특정 아이디어나 프로젝트에 집착했지만 나중에 관심을 잃었습니다.',
-            '나는 중요한 도전을 정복하기 위해 좌절을 극복했습니다.'
+            '새로운 아이디어나 프로젝트가 생기면 전에 하던 일에는 소홀해진다.',
+            '난 좌절하지 않는다. 쉽게 포기하지 않는다.',
+            '목표를 자주 세우지만 나중에 바꾼다.',
+            '나는 열심히 일한다.',
+            '프로젝트가 몇 달 이상 걸리는 경우 집중하기 힘들다.',
+            '뭐든 시작하면 끝낸다.',
+            '관심거리가 매해 바뀐다.',
+            '나는 부지런하고, 절대 포기하지 않는다.',
+            '어떤 아이디어나 프로젝트에 잠깐 골몰하지만 곧 흥미를 잃는다.',
+            '중요한 일을 끝내기 위해 어려움이 있어도 극복한 적이 있다다.'
         ];
 
         var form = document.getElementById('grit-test-form');
@@ -116,7 +119,7 @@
             }
             var gritScore = totalScore / questions.length;
             var percentile = getPercentile(gritScore);
-            showModal('와우! 당신의 그릿 점수는 ' + gritScore + '입니다. 이는 상위 ' + percentile + '%에 해당합니다. 계속해서 좋은 작업을 유지하세요!', true);
+            showModal('와우! 당신의 그릿 점수는 ' + gritScore + '입니다. 이는 상위 ' + percentile + '%에 해당합니다. 계속 화이팅해서 성공하세요!', true);
             return {gritScore: gritScore, percentile: percentile};
         }
 
@@ -177,7 +180,7 @@
             var gritScore = params.get('gritScore');
             var percentile = params.get('percentile');
             if (gritScore && percentile) {
-                showModal('당신의 그릿 점수는 ' + gritScore + '입니다. 이는 상위 ' + percentile + '%에 해당합니다. <a href="' + window.location.origin + '">나도 검사하기</a>', false);
+                showModal('당신의 그릿 점수는 ' + gritScore + '입니다. 이는 상위 ' + percentile + '%에 해당합니다. <button onclick="location.href=\'' + window.location.origin + '\'">나도 검사하기</button>', false);
             }
         }
     </script>
