@@ -232,16 +232,13 @@
         };
 
         function copyToClipboard() {
-            var dummy = document.createElement('input');
             var text = window.location.href + '?gritScore=' + calculateGritScore().gritScore + '&percentile=' + calculateGritScore().percentile;
-
-            document.body.appendChild(dummy);
-            dummy.value = text;
-            dummy.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummy);
-
-            alert('링크가 클립보드에 복사되었습니다!');
+            navigator.clipboard.writeText(text).then(function() {
+                alert('링크가 클립보드에 복사되었습니다!');
+            })
+            .catch(function(error) {
+                alert('복사 실패: ', error);
+            });
         }
 
         window.onload = function() {
