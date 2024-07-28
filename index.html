@@ -26,6 +26,11 @@
             background-color: #f4f4f4;
         }
 
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
         .question {
             background-color: #fff;
             border: 1px solid #ddd;
@@ -33,6 +38,7 @@
             margin-bottom: 40px;
             border-radius: 5px;
             position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .slider-container {
@@ -60,6 +66,35 @@
         input[type="range"] {
             width: 100%;
             margin-top: 20px;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        input[type="range"]:hover {
+            opacity: 1;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #007BFF;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #007BFF;
+            cursor: pointer;
+            border-radius: 50%;
         }
 
         button {
@@ -74,11 +109,12 @@
             margin: 20px 0;
             cursor: pointer;
             border-radius: 4px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         button:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
 
         .modal {
@@ -101,6 +137,7 @@
             width: 80%;
             font-size: 20px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         @media (max-width: 600px) {
@@ -112,9 +149,8 @@
             }
         }
     </style>
-<meta name="google-site-verification" content="qoRotECDD2K9SUC4vqKobi8WJlKmhkV1WsNmd0OEYms" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9360638495551473"
-     crossorigin="anonymous"></script>
+    <meta name="google-site-verification" content="qoRotECDD2K9SUC4vqKobi8WJlKmhkV1WsNmd0OEYms" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9360638495551473" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>그릿 테스트</h1>
@@ -164,14 +200,16 @@
                         <span>매우 그렇다</span>
                     </div>
                 </div>
-                <span id="score${index + 1}" class="score-display">3</span>
+                <!-- 점수 표시를 숨김 처리 -->
+                <span id="score${index + 1}" class="score-display" style="display: none;">3</span>
             `;
             form.appendChild(div);
         });
 
         function updateScore(questionNumber, value) {
+            // 점수 표시를 숨김 처리
             const score = questionNumber % 2 === 0 ? 6 - value : value;
-            document.getElementById('score' + questionNumber).textContent = score;
+            // document.getElementById('score' + questionNumber).textContent = score; // 점수 표시 코드 주석 처리
         }
 
         function calculateGritScore() {
